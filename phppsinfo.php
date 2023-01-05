@@ -140,21 +140,22 @@ class PhpPsInfo
      */
     public function checkAuth()
     {
-        if (PHP_SAPI === 'cli' ||
-            empty($this->login)
-        ) {
-            return;
-        }
+        return;
+        // if (PHP_SAPI === 'cli' ||
+        //     empty($this->login)
+        // ) {
+        //     return;
+        // }
 
-        if (!isset($_SERVER['PHP_AUTH_USER']) ||
-            $_SERVER['PHP_AUTH_PW'] != $this->password ||
-            $_SERVER['PHP_AUTH_USER'] != $this->login
-        ) {
-            header('WWW-Authenticate: Basic realm="Authentification"');
-            header('HTTP/1.0 401 Unauthorized');
-            echo '401 Unauthorized';
-            exit(401);
-        }
+        // if (!isset($_SERVER['PHP_AUTH_USER']) ||
+        //     $_SERVER['PHP_AUTH_PW'] != $this->password ||
+        //     $_SERVER['PHP_AUTH_USER'] != $this->login
+        // ) {
+        //     header('WWW-Authenticate: Basic realm="Authentification"');
+        //     header('HTTP/1.0 401 Unauthorized');
+        //     echo '401 Unauthorized';
+        //     exit(401);
+        // }
     }
 
     /**
